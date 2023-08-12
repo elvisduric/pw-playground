@@ -21,8 +21,8 @@ The primary directories are as follows
 
 
 ## Systems Under Test
-The system for UI tests is : https://tutorialsninja.com/demo/
-The system for API tests is : https://gorest.co.in/public/
+- The system for UI tests is : https://tutorialsninja.com/demo/
+- The system for API tests is : https://gorest.co.in/public/
 
 
 ## Libraries Used
@@ -34,8 +34,7 @@ The system for API tests is : https://gorest.co.in/public/
 
 
 ## Config
-There are three different configuration files for this tests
-- playwright.config.js - If you want to run tests on your local , then use this - used by default.
+- playwright.config.js
 
 ## Running tests
 To run all tests on local run
