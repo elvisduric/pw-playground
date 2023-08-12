@@ -1,0 +1,15 @@
+{
+  "name": "PW-Playground",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@faker-js/faker": "^8.0.2",
+    "@playwright/test": "^1.37.0"
+  },
+  "scripts": {
+    "test:all": "npx playwright test",
+    "test:api": "npx playwright test tests/api"
+  },
+  "dependencies": {
+    "crypto-js": "^4.1.1"
+  }
+}
