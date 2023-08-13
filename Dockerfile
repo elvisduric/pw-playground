@@ -9,7 +9,7 @@ COPY locators /app/locators
 COPY pages/ /app/pages
 COPY data/ /app/data
 COPY integration/ /app/integration
-COPY performance/ /app/performance
+COPY k6/ /app/performance
 COPY playwright.config.js /app/
 
 RUN npm install

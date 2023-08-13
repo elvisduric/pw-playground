@@ -1,5 +1,5 @@
 import {expect, test} from "@playwright/test";
-import DataGenerator from "data/dataGenerator";
+import DataGenerator from "../../data/dataGenerator";
 import ApiClient from "../../integration/apiClient";
 
 test.describe('User service', () => {

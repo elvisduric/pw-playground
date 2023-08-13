@@ -62,6 +62,6 @@ To run playwright report
 The test suite contains a docker file that enables you to run the commands in Docker in local/ci systems
 - Build the docker file : `docker build -t pw .`
 
-here you can replace `pw` with whatever tag name you want to give - it could be `docker build -t testing .`
+here you can replace `pw` with whatever tag name you want to give - it could be `docker build -t pw .`
 
-- Once the Dockerfile is built, then run that using `docker run -it pw:latest npm run test-ci` - replace the tag name (`pw`) with whatever tag name you've given
+- Once the Dockerfile is built, then run that using `docker run -it pw:latest npm run test:all` - replace the tag name (`pw`) with whatever tag name you've given
