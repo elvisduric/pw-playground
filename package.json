@@ -11,6 +11,7 @@
     "test:ui": "npx playwright test tests/ui"
   },
   "dependencies": {
-    "crypto-js": "^4.1.1"
+    "crypto-js": "^4.1.1",
+    "k6": "^0.0.0"
   }
 }

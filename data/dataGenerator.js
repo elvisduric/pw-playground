@@ -1,6 +1,6 @@
 import {faker} from '@faker-js/faker';
 
-class DataGenerator {
+export class DataGenerator {
     generateDefaultUser() {
         return {
             name: faker.person.fullName(),
