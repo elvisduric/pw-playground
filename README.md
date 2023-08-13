@@ -1,5 +1,5 @@
 ## Simple Test Framework with Playwright
-This is a simple sample test framework using Page Object Model in Playwright. Tests are written in `.js`, and run only on Chrome, but in parallel.
+This is a simple sample test framework using Page Object Model in Playwright + k6 API performance testing tool. Tests are written in `.js`, and run only on Chrome, but in parallel.
 
 
 ## Setup
@@ -18,15 +18,17 @@ The primary directories are as follows
 - locators : Contains locator classes. All classes inside this folder has locators.
 - pages : Page class contains the methods/assertions per page.
 - tests : Contain the tests for the web pages
+- performance : Contains the performance tests by using k6 tool
 
 
 ## Systems Under Test
 - The system for UI tests is : https://tutorialsninja.com/demo/
-- The system for API tests is : https://gorest.co.in/public/
+- The system for API and Performance tests is : https://gorest.co.in/public/
 
 
 ## Libraries Used
 - Playwright : For driving the UI tests
+- k6 tool : For performance test executions
 - faker : For creating fake data
 - cryptoJS : For encrypting passwords ( not done yet)
 - excelJS : For handling excel data in JS ( not done yet)
@@ -37,9 +39,11 @@ The primary directories are as follows
 - playwright.config.js
 
 ## Running tests
-To run all tests on local run
+To run all API and UI tests on local run
 ```npx playwright test```
 
+To run API performance test scripts on local run
+```k6 run performance/api/{{scriptName.js}}```
 
 To run all tests in CI - mode (headless)
 ```npm run test:all ```
