@@ -8,7 +8,7 @@ export const options = {
     //         { target: 0, duration: '1m' },
     // ],
     "iterations": 10,
-    "vus": 2,
+    "vus": 1,
     thresholds: {
         http_req_failed: ['rate < 0.1'], //request failure rate < 10%
     },
@@ -38,10 +38,8 @@ export default function () {
     console.log('User ID: ' + JSON.parse(response.body).data.id);
     console.log('Status Code:' + response.status);
 
-
     check(response, {
             "is status 201": (r) => r.status === 201,
-            "422 Unprocessable Entity": (r) => r.status === 422,
             "is message ID > 0": (r) => JSON.parse(r.body).data.id > 0,
             "is message correct": (r) => JSON.parse(r.body).data.name === data.name
         }

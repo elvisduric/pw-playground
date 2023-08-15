@@ -4,7 +4,9 @@ import TopHeaderLocator from "../locators/topBar.locator";
 class TopHeader {
     constructor(page) {
         this.page = page;
-        this.validateEuroCurrency = "€";
+        this.validateEurCurrency = "€";
+        this.validateGbpCurrency = "£";
+        this.validateUsdCurrency = "$";
     }
 
     async validateOptionsPresent() {
@@ -18,12 +20,26 @@ class TopHeader {
         await baseMethods.validateElementVisible(topHeader.Checkout);
     }
 
-    async selectEURCurrency() {
+    async selectCurrency(currency) {
         const baseMethods = new BaseMethods(this.page);
         const topHeader = new TopHeaderLocator(this.page);
         await baseMethods.clickOnElement(topHeader.CurrencyDropDown);
-        await baseMethods.clickOnElement(topHeader.EUROption);
-        await baseMethods.validateText(topHeader.selectedCurrency, this.validateEuroCurrency);
+        switch (currency) {
+            case 'EUR':
+                await baseMethods.clickOnElement(topHeader.EUROption);
+                await baseMethods.validateText(topHeader.selectedCurrency, this.validateEurCurrency);
+                break;
+            case 'GBP':
+                await baseMethods.clickOnElement(topHeader.GBPOption);
+                await baseMethods.validateText(topHeader.selectedCurrency, this.validateGbpCurrency);
+                break;
+            case 'USD':
+                await baseMethods.clickOnElement(topHeader.USDOption);
+                await baseMethods.validateText(topHeader.selectedCurrency, this.validateUsdCurrency);
+                break;
+            default:
+                throw new Error("No such currency found.");
+        }
     }
 }
 
