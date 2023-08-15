@@ -21,9 +21,9 @@ test.describe('Load the URL and validate the top header', () => {
 
     const currencies = ['EUR', 'GBP', 'USD'];
     for (const currency of currencies) {
-    test(`Select the ${currency} currency`, async ({page}) => {
-        const topHeader = new TopHeader(page);
-        await topHeader.selectCurrency(currency);
-    });
+        test(`Select the ${currency} currency`, async ({page}) => {
+            const topHeader = new TopHeader(page);
+            await topHeader.selectCurrency(currency);
+        });
     }
 });
