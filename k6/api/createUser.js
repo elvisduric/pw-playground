@@ -2,16 +2,23 @@ import http from 'k6/http';
 import {sleep, check} from 'k6';
 
 export const options = {
-    // stages: [
-    //         { target: 20, duration: '1m' },
-    //         { target: 15, duration: '1m' },
-    //         { target: 0, duration: '1m' },
-    // ],
-    "iterations": 10,
-    "vus": 1,
-    thresholds: {
-        http_req_failed: ['rate < 0.1'], //request failure rate < 10%
+    scenarios: {
+        elvis_scenario_name: {
+            executor: 'per-vu-iterations',
+            // stages: [
+            //         { target: 20, duration: '1m' },
+            //         { target: 15, duration: '1m' },
+            //         { target: 0, duration: '1m' },
+            // ],
+            vus: 2, //Number of virtual users
+            iterations: 10, //Number of call iterations
+            maxDuration: "60s", // Maximum duration of the test run. During this time k6 will make as many requests as possible.
+        }
     },
+    thresholds: {
+        http_req_failed: ['rate < 0.01'], // http errors should be less than 1%
+        http_req_duration: ['p(95)<600'], // 95% of requests should be below 200ms
+    }
 };
 
 export default function () {
