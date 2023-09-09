@@ -1,7 +1,22 @@
 name: Regression Tests
 on:
   pull_request:
-    branches: [develop]
+    branches:
+      - 'qa/**'
+  push:
+    branches:
+      - develop
+
+  workflow_dispatch:
+    inputs:
+      BRANCH:
+        description: 'Use workflow from'
+        required: true
+        default: 'develop'
+        type: choice
+        options:
+          - master
+          - develop
 jobs:
   test:
     timeout-minutes: 60
