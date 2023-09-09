@@ -54,7 +54,7 @@ test.describe('User service', () => {
                     from: "what@members.babbel.com", // We are looking for a sender header
                     to: "elvis.duric.student@gmail.com", // Which inbox to poll. credentials.json should contain the credentials to it.
                     wait_time_sec: 10, // Poll interval (in seconds).
-                    after: new Date(new Date().setDate(new Date().getDate() - 7)),
+                    after: new Date(new Date().setDate(new Date().getDate() - 30)),
                     max_wait_time_sec: 30, // Maximum poll time (in seconds), after which we'll give up.
                     include_body: true
                 }
