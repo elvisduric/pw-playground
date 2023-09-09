@@ -1,9 +1,7 @@
 name: Regression Tests
 on:
   push:
-    branches: [master]
-  pull_request:
-    branches: [master]
+    branches: [develop]
 jobs:
   test:
     timeout-minutes: 60
