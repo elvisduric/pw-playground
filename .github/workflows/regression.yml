@@ -2,7 +2,7 @@ name: Regression Tests
 on:
   pull_request:
     branches:
-      - develop
+      - master
   push:
     branches:
       - 'qa/**'
