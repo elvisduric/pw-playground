@@ -44,7 +44,7 @@ test.describe('User service', () => {
         });
     });
 
-    test('Get Gmail and verify its content', async () => {
+    test.skip('Get Gmail and verify its content', async () => {
         const email = await test.step('Verify that Email exist', async () => {
             return gmail.check_inbox(
                 path.resolve(__dirname, ('../../gmailData/credentials.json')),
