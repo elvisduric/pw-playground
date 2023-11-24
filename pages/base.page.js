@@ -53,7 +53,7 @@ class BaseMethods {
     }
 
     async fillInputValue(locator, InputValue) {
-        await locator.fill(InputValue);
+        await locator.pressSequentially(InputValue, { delay: 100 });
         await this.page.waitForTimeout(500);
     }
 

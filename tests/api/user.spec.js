@@ -47,10 +47,10 @@ test.describe('User service', () => {
     test('Get Gmail and verify its content', async () => {
         const email = await test.step('Verify that Email exist', async () => {
             return gmail.check_inbox(
-                path.resolve(__dirname, "../../gmail/credentials.json"),
-                path.resolve(__dirname, "../../gmail/token.json"),
+                path.resolve(__dirname, ('../../gmailData/credentials.json')),
+                path.resolve(__dirname, ('../../gmailData/token.json')),
                 {
-                    subject: "6 months of German lessons for free", // What we are looking for in the subject of the message.
+                    subject: "Flash Sale", // What we are looking for in the subject of the message.
                     from: "what@members.babbel.com", // We are looking for a sender header
                     to: "elvis.duric.student@gmail.com", // Which inbox to poll. credentials.json should contain the credentials to it.
                     wait_time_sec: 10, // Poll interval (in seconds).
@@ -62,7 +62,7 @@ test.describe('User service', () => {
         });
 
         await test.step('Verify Email body', async () => {
-            await expect(email[0].body.text).toContain("Buy today and get 6 months free when you buy a 12-month subscription!");
+            await expect(email[0].body.text).toContain("Black Friday");
         });
     });
 });
